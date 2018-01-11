@@ -15,8 +15,8 @@ import com.jack.domain.User;
 @Transactional
 @CacheConfig(cacheNames={"userCache"},cacheManager="redisCacheManager")
 public class UserService {
-//	@Autowired
-//	private UserDao userDao;
+	@Autowired
+	private UserDao userDao;
 	
 	
 	@Autowired
@@ -27,23 +27,23 @@ public class UserService {
 	 * for jpa opreation
 	 * 
 	 */
-//	@Cacheable(key="'User_' + #user.id")
-//	public User save(User user){
-//		System.out.println("save to database");
-//		User user1 = userDao.save(user);
-//		return user1;
-//	}
-//	
-//	@Cacheable(key="'User_' + #id")
-//	public User findById(Integer id){
-//		System.out.println("query database");
-//		return userDao.findOne(id);
-//	}
-//	
-//	@CacheEvict(key="'User_' + #id")
-//	public void delete(Integer id){
-//		userDao.delete(id);
-//	}
+	@Cacheable(key="'User_' + #user.id")
+	public User save(User user){
+		System.out.println("save to database");
+		User user1 = userDao.save(user);
+		return user1;
+	}
+	
+	@Cacheable(key="'User_' + #id")
+	public User findById(Integer id){
+		System.out.println("query database");
+		return userDao.findOne(id);
+	}
+	
+	@CacheEvict(key="'User_' + #id")
+	public void delete(Integer id){
+		userDao.delete(id);
+	}
 	
 	/*
 	 * for hibernate operantion

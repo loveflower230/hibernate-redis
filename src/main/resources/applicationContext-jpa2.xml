@@ -14,6 +14,7 @@
 		    http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd"
        default-lazy-init="true">
     
+    
      <!-- 利用Spring的实体管理器工厂来创建JPA实体管理器 -->  
      <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
     <property name="dataSource" ref="dataSource"/>
@@ -53,9 +54,7 @@
     	<jdbc:script location="classpath:/sql/init-table-user.sql"/>
     </jdbc:embedded-database>
        
-    <bean id="userService" class="com.jack.service.UserService">
-    </bean>
-    
+   
     
      
      

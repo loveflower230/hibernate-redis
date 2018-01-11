@@ -47,10 +47,7 @@
     <jdbc:embedded-database id="datasource"  type="H2">
     	<jdbc:script location="classpath:/sql/init-table-user.sql"/>
     </jdbc:embedded-database>
-       
-    <bean id="userService" class="com.jack.service.UserService"></bean>
-     
-     
+    
      
        
        

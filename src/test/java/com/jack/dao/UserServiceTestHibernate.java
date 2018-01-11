@@ -10,7 +10,7 @@ import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
 import com.jack.domain.User;
 import com.jack.service.UserService;
 
-@ContextConfiguration({ "classpath:applicationContext-hibernate.xml", "classpath:application-3.xml" })
+@ContextConfiguration({ "classpath:applicationContext-hibernate.xml", "classpath:application-3.xml", "classpath:applicationContext-jpa2.xml" })
 public class UserServiceTestHibernate extends AbstractJUnit4SpringContextTests {
 
 	@Autowired
